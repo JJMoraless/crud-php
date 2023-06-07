@@ -1,0 +1,43 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+h2{
+  margin: 0;
+  padding: 0;
+}
+input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+}
+[class$="__container"] {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 90%;
+}
+[class$="__grid"] {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  margin-bottom: 40px;
+}
+[class$="__element"]{
+  display: grid;
+  gap: 10px;
+}
+.body__crud {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+button {
+  padding: 8px;
+}
+.header__container {
+  margin-top: 50px;
+}
