@@ -1,5 +1,9 @@
 <?php
-require "delete.php";
+// require "./data/user.php";
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+
 
 ?>
 
@@ -22,24 +26,23 @@ require "delete.php";
             <div class="header__grid">
                 <div class="header__element">
                     <input name="nombre" type="text" placeholder="Nombre">
-                    <input type="text" placeholder="Apellido">
-                    <input type="text" placeholder="Direccion">
+                    <input name="apellido" type="text" placeholder="Apellido">
+                    <input name="direccion" type="text" placeholder="Direccion">
                 </div>
                 <div class="header__element">
-                    <h2>Campuslands</h2>
-                    <input type="text" placeholder="Edad">
-                    <input type="text" placeholder="Email">
+                    <h2>Campuslands 👨‍🚀</h2>
+                    <input name="edad" type="text" placeholder="Edad">
+                    <input name="email" type="text" placeholder="Email">
                 </div>
             </div>
         </section>
 
         <section class="body__container">
-            <h1></h1>
             <div class="body__grid">
                 <div class="body__element">
-                    <input type="text" placeholder="Hora de entrada">
-                    <input type="text" placeholder="Team">
-                    <input type="text" placeholder="Trainer">
+                    <input name="hora_entrada" type="text" placeholder="Hora de entrada">
+                    <input name="team" type="text" placeholder="Team">
+                    <input name="trainer" type="text" placeholder="Trainer">
                 </div>
                 <div class="body__element">
                     <div class="body__crud">
@@ -68,7 +71,7 @@ require "delete.php";
             </thead>
             <tbody>
                 <tr>
-                    <td>  <?php delete_user() ?> </td>
+                    <td> <?php ?> </td>
                     <td>aaaaaaaa</td>
                     <td>aaaaaaaa</td>
                     <td>aaaaaaaa</td>
