@@ -31,7 +31,7 @@ function get_users()
     $users = json_decode($user->get_all());
     foreach ($users as $user_data) {
         echo <<<HTML
-            <tr>    
+            <tr>
                 <td>$user_data->nombre</td>
                 <td>$user_data->apellido</td>
                 <td>$user_data->direccion</td>
@@ -39,12 +39,8 @@ function get_users()
                 <td>$user_data->email</td>
                 <td>$user_data->hora_entrada</td>
                 <td>$user_data->team</td>
-                <td>$user_data->trainer</td>    
-                <!-- <td> $user_data->cedula </td>     -->
-
-                <td> <input name="registro,$user_data->id" type="submit" value="☝"  /></td>
-                
-               
+                <td>$user_data->trainer</td>
+                <td><button name="registro" type="submit" value="$user_data->id">🚀</button></td>
             </tr>
         HTML;
     }
@@ -91,19 +87,12 @@ if(isset($_POST["update"])){
             "cedula" => $_POST["cedula"],
         ]
     );
-    $user->update_by_id($user_id,$data );
+    $user->update_by_id($user_id,$data);
 }
 
-
-if(isset($_POST["traer_registro"])){
-
+if(isset($_POST["registro"])){
+    $user_form = json_decode($user->get_by_id($_POST["registro"]));
 }
-
-
-
-
-
-
 
 ?>
 
@@ -153,7 +142,7 @@ if(isset($_POST["traer_registro"])){
                         <input name="update" type="submit" value="🔏" />
                         <input name="read" type="submit" value="🔍" />
                     </div>
-                    <input required name="cedula" type="text" placeholder="Cedula">
+                    <input required name="cedula" type="text" placeholder="Cedula" value="<?php echo $user_form?->cedula ?>">
                 </div>
             </div>
         </section>
